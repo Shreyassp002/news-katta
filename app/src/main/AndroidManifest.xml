@@ -6,9 +6,9 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@drawable/ic_news_katta"
+        android:icon="@drawable/ic_news_katta_black"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/ic_news_katta_circular"
         android:supportsRtl="true"
         android:theme="@style/App.Starting.Theme"
         tools:targetApi="31">
