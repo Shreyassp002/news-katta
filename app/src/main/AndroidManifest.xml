@@ -10,13 +10,13 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/ic_news_katta_circular"
         android:supportsRtl="true"
-        android:theme="@style/App.Starting.Theme"
+        android:theme="@style/Theme.NewsKatta"
         tools:targetApi="31">
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/App.Starting.Theme">
+            android:theme="@style/Theme.NewsKatta">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

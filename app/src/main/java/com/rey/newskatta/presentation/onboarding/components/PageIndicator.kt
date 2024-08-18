@@ -21,8 +21,8 @@ fun PageIndicator(
     modifier: Modifier = Modifier,
     pageSize: Int,
     selectedPage: Int,
-    selectedColor: Color = MaterialTheme.colorScheme.primary,
-    unselectedColor: Color = colorResource(id = R.color.BlueGray)
+    selectedColor: Color = colorResource(id = R.color.BlueGray),
+    unselectedColor: Color = Color.LightGray
 ) {
 
     Row(

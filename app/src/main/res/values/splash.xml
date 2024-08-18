@@ -2,7 +2,7 @@
 <resources>
     <style name="App.Starting.Theme" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">#FFFFFF</item>
-        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_news_katta</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_news_katta_logo</item>
         <item name="postSplashScreenTheme">@style/Theme.NewsKatta</item>
     </style>
 </resources>

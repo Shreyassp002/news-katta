@@ -44,7 +44,7 @@ fun OnBoardingPage(
             text = page.title,
             modifier = Modifier
                 .padding(horizontal = MediumPadding2),
-            style = MaterialTheme.typography.displaySmall.copy(fontWeight = FontWeight.Bold),
+            style = MaterialTheme.typography.headlineMedium.copy(fontWeight = FontWeight.Bold),
             color = colorResource(id = R.color.display_small)
         )
         Text(
