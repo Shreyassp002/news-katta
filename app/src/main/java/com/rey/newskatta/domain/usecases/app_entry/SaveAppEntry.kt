@@ -1,4 +1,4 @@
-package com.rey.newskatta.domain.usecases
+package com.rey.newskatta.domain.usecases.app_entry
 
 import com.rey.newskatta.domain.manager.LocalUserManager
 

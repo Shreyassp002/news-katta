@@ -1,4 +1,4 @@
-package com.rey.newskatta.domain.usecases
+package com.rey.newskatta.domain.usecases.app_entry
 
 data class AppEntryUseCases(
     val readAppEntry: ReadAppEntry,

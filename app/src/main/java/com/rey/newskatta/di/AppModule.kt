@@ -1,12 +1,11 @@
 package com.rey.newskatta.di
 
 import android.app.Application
-import android.app.LocaleManager
 import com.rey.newskatta.data.manager.LocalUserManagerImpl
 import com.rey.newskatta.domain.manager.LocalUserManager
-import com.rey.newskatta.domain.usecases.AppEntryUseCases
-import com.rey.newskatta.domain.usecases.ReadAppEntry
-import com.rey.newskatta.domain.usecases.SaveAppEntry
+import com.rey.newskatta.domain.usecases.app_entry.AppEntryUseCases
+import com.rey.newskatta.domain.usecases.app_entry.ReadAppEntry
+import com.rey.newskatta.domain.usecases.app_entry.SaveAppEntry
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
