@@ -37,6 +37,7 @@ import com.rey.newskatta.ui.theme.NewsKattaTheme
 
 @Composable
 fun ArticleCard(
+    modifier: Modifier = Modifier,
     article: Article,
     onClick: () -> Unit
 ){
