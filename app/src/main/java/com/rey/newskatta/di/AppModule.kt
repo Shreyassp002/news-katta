@@ -11,6 +11,7 @@ import com.rey.newskatta.domain.usecases.app_entry.ReadAppEntry
 import com.rey.newskatta.domain.usecases.app_entry.SaveAppEntry
 import com.rey.newskatta.domain.usecases.news.GetNews
 import com.rey.newskatta.domain.usecases.news.NewsUseCases
+import com.rey.newskatta.domain.usecases.news.SearchNews
 import com.rey.newskatta.util.Constants.BASE_URL
 import dagger.Module
 import dagger.Provides
@@ -64,7 +65,8 @@ object AppModule {
         newsRepository: NewsRepository
     ): NewsUseCases{
         return NewsUseCases(
-            getNews = GetNews(newsRepository)
+            getNews = GetNews(newsRepository),
+            searchNews = SearchNews(newsRepository)
         )
     }
 }
