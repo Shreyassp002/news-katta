@@ -1,6 +1,10 @@
 ![Kotlin](https://img.shields.io/badge/kotlin-%237F52FF.svg?style=for-the-badge&logo=kotlin&logoColor=white)
-# News Katta
 
+<div align="center">
+  <img src="https://github.com/Shreyassp002/News-Katta/raw/main/app/src/main/res/drawable/ic_news_katta.png" alt="News Katta Logo" width="280"/>
+</div>
+
+# News Katta
 A News App that delivers customized short news articles tailored to user preferences.
 
 ## Built with
