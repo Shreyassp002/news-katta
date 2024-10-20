@@ -7,17 +7,30 @@
 # News Katta
 A News App that delivers customized short news articles tailored to user preferences.
 
-## Built with
+## Tech Stack
 
-- Kotlin
-- Jetpack Compose
-- MVVM architecture
-- NewsApi
-- Paging 3 Library
-- Retrofit
-- Room Database
-- Dagger Hilt
-- Datastore Preferences
+- **Language**: Kotlin
+- **UI Framework**: Jetpack Compose
+- **Architecture**: MVVM (Model-View-ViewModel)
+- **Networking**: Retrofit 
+- **JSON Parsing**: Gson
+- **Image Loading**: Coil
+- **Asynchronous Programming**: Kotlin Coroutines
+- **Navigation**: Jetpack Navigation Compose
+- **Dependency Injection**: Dagger Hilt
+- **UI Components**: Material Design 3
+- **Build System**: Gradle with Kotlin DSL
+- **Minimum SDK**: 21 (Android 5.0 Lollipop)
+- **Target SDK**: 34 (Android 14)
+
+## Key Features
+
+1. Browse news by different categories (sports, politics, etc.)
+2. Search for news
+3. View detailed news information
+4. Mark news as favorites
+8. Toggle between light and dark themes
+
 
 ## Build Instructions
 
@@ -31,7 +44,7 @@ A News App that delivers customized short news articles tailored to user prefere
 
 
 3) Wait for Gradle to download dependencies.
-4) Create a Object file into `app/src/main/java/com/rey/newskatta/util/Constants.kt`
+4) Create a Object file into `app/src/main/java/com/rey/newskatta/util/`
 5) Copy this code and paste in Constants.kt
    
  ```bash
