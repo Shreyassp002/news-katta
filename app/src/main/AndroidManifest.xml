@@ -14,9 +14,10 @@
         android:roundIcon="@drawable/ic_news_katta_circular"
         android:supportsRtl="true"
         android:theme="@style/Theme.NewsKatta"
-        tools:targetApi="31">
+        android:enableOnBackInvokedCallback="true"
+        tools:targetApi="34">
         <activity
-            android:name=".MainActivity"
+            android:name=".presentation.mainactivity.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.NewsKatta">

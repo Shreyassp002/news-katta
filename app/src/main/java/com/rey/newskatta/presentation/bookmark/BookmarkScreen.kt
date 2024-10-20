@@ -15,34 +15,37 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.navigation.Navigator
 import com.rey.newskatta.R
+import com.rey.newskatta.domain.model.Article
 import com.rey.newskatta.presentation.Dimens.MediumPadding1
-import com.rey.newskatta.presentation.common.ArticleList
+
+import com.rey.newskatta.presentation.common.ArticlesList
 import com.rey.newskatta.presentation.nvgraph.Route
 
 @Composable
 fun BookmarkScreen(
     state: BookmarkState,
-    navigate:(String) -> Unit
-){
+    navigateToDetails: (Article) -> Unit
+) {
     Column(
         modifier = Modifier
-            .fillMaxSize()
+            .fillMaxWidth()
             .statusBarsPadding()
             .padding(top = MediumPadding1, start = MediumPadding1, end = MediumPadding1)
     ) {
+
         Text(
             text = "Bookmark",
-            style = MaterialTheme
-                .typography
-                .displaySmall
-                .copy(fontWeight = FontWeight.Bold),
-            color = colorResource(id = R.color.text_title)
+            style = MaterialTheme.typography.displayMedium.copy(fontWeight = FontWeight.Bold),
+            color = colorResource(
+                id = R.color.text_title
+            )
         )
 
         Spacer(modifier = Modifier.height(MediumPadding1))
 
-        ArticleList(articles = state.articles, onClick = { navigate(Route.DetailsScreen.route) })
-
-
+        ArticlesList(
+            articles = state.articles,
+            onClick = navigateToDetails
+        )
     }
 }

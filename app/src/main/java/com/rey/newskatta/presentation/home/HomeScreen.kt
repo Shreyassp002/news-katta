@@ -26,69 +26,76 @@ import androidx.paging.compose.LazyPagingItems
 import com.rey.newskatta.R
 import com.rey.newskatta.domain.model.Article
 import com.rey.newskatta.presentation.Dimens.MediumPadding1
-import com.rey.newskatta.presentation.common.ArticleList
+import com.rey.newskatta.presentation.Dimens.MediumPadding2
+
+import com.rey.newskatta.presentation.common.ArticlesList
 import com.rey.newskatta.presentation.common.SearchBar
 import com.rey.newskatta.presentation.nvgraph.Route
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun HomeScreen(articles: LazyPagingItems<Article>, navigate: (String) -> Unit){
+fun HomeScreen(
+    articles: LazyPagingItems<Article>,
+    navigateToSearch: () -> Unit,
+    navigateToDetails: (Article) -> Unit
+) {
+
     val titles by remember {
         derivedStateOf {
-            if (articles.itemCount > 10){
-              articles.itemSnapshotList.items
-                  .slice(IntRange(start = 0, endInclusive = 9))
-                  .joinToString(separator = " \uD83d\uDFE5 "){ it.title }
-            }else{
+            if (articles.itemCount > 10) {
+                articles.itemSnapshotList.items
+                    .slice(IntRange(start = 0, endInclusive = 9))
+                    .joinToString(separator = " \uD83D\uDFE5 ") { it.title }
+            } else {
                 ""
             }
         }
     }
 
-
-    Column (
+    Column(
         modifier = Modifier
             .fillMaxSize()
             .padding(top = MediumPadding1)
             .statusBarsPadding()
     ) {
         Image(
-            painter = painterResource(id = R.drawable.ic_news_katta_header),
+            painter = painterResource(id = R.drawable.ic_news_katta_logo),
             contentDescription = null,
             modifier = Modifier
-                .width(110.dp)
-                .height(50.dp)
-                //.padding(horizontal = MediumPadding1)
+                .width(150.dp)
+                .height(30.dp)
+                .padding(horizontal = MediumPadding1)
         )
+
         Spacer(modifier = Modifier.height(MediumPadding1))
+
         SearchBar(
-            modifier = Modifier.padding(horizontal = 20.dp),
+            modifier = Modifier
+                .padding(horizontal = MediumPadding2)
+                .fillMaxWidth(),
             text = "",
             readOnly = true,
-            onClick = { navigate(Route.SearchScreen.route) },
             onValueChange = {},
-            onSearch = {}
+            onSearch = {},
+            onClick = navigateToSearch
         )
+
         Spacer(modifier = Modifier.height(MediumPadding1))
-        
+
         Text(
-            text = titles,
-            modifier = Modifier
+            text = titles, modifier = Modifier
                 .fillMaxWidth()
                 .padding(start = MediumPadding1)
-                .basicMarquee(),
-            fontSize = 12.sp,
+                .basicMarquee(), fontSize = 12.sp,
             color = colorResource(id = R.color.placeholder)
         )
 
         Spacer(modifier = Modifier.height(MediumPadding1))
 
-        ArticleList(modifier = Modifier.padding(horizontal = MediumPadding1),
+        ArticlesList(
+            modifier = Modifier.padding(horizontal = MediumPadding1),
             articles = articles,
-            onClick = {
-                navigate(Route.DetailsScreen.route)
-            }
+            onClick = navigateToDetails
         )
     }
-
 }

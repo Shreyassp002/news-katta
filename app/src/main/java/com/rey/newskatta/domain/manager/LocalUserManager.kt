@@ -3,8 +3,10 @@ package com.rey.newskatta.domain.manager
 
 import kotlinx.coroutines.flow.Flow
 
-interface LocalUserManager {
+interface LocalUserManger {
+
     suspend fun saveAppEntry()
 
     fun readAppEntry(): Flow<Boolean>
+
 }

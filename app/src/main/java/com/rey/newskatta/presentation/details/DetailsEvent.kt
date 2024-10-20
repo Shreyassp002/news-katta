@@ -1,6 +1,10 @@
 package com.rey.newskatta.presentation.details
 
-sealed class DetailsEvent {
+import com.rey.newskatta.domain.model.Article
 
-    object SaveArticle: DetailsEvent()
+sealed class DetailsEvent {
+    data class UpsertDeleteArticle(val article: Article) : DetailsEvent()
+
+    object RemoveSideEffect : DetailsEvent()
+
 }

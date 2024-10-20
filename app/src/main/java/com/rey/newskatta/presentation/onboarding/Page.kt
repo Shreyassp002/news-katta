@@ -6,23 +6,23 @@ import com.rey.newskatta.R
 data class Page(
     val title: String,
     val description: String,
-    @DrawableRes val image: Int
+    @DrawableRes val image: Int,
 )
 
 val pages = listOf(
     Page(
-        title = "Welcome to NewsKatta",
-        description = "Get the latest news from around the world",
+        title = "Lorem Ipsum is simply dummy",
+        description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
         image = R.drawable.onboarding1
     ),
     Page(
-        title = "Personalized News",
-        description = "Get news that matters to you",
+        title = "Lorem Ipsum is simply dummy",
+        description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
         image = R.drawable.onboarding2
     ),
     Page(
-        title = "Stay Updated",
-        description = "Get news updates as they happen",
+        title = "Lorem Ipsum is simply dummy",
+        description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
         image = R.drawable.onboarding3
     )
 )

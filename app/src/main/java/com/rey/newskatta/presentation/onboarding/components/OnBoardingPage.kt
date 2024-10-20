@@ -2,6 +2,7 @@ package com.rey.newskatta.presentation.onboarding.components
 
 
 import android.content.res.Configuration
+import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -28,40 +29,44 @@ import com.rey.newskatta.ui.theme.NewsKattaTheme
 @Composable
 fun OnBoardingPage(
     modifier: Modifier = Modifier,
-    page: Page
+    page: Page,
 ) {
-    Column(modifier = Modifier) {
+    Column(modifier = modifier) {
         Image(
             modifier = Modifier
                 .fillMaxWidth()
-                .fillMaxHeight(fraction = 0.6f),
+                .fillMaxHeight(0.60f),
             painter = painterResource(id = page.image),
             contentDescription = null,
             contentScale = ContentScale.Crop
         )
         Spacer(modifier = Modifier.height(MediumPadding1))
         Text(
+            modifier = Modifier.padding(horizontal = MediumPadding2),
             text = page.title,
-            modifier = Modifier
-                .padding(horizontal = MediumPadding2),
-            style = MaterialTheme.typography.headlineMedium.copy(fontWeight = FontWeight.Bold),
+            style = MaterialTheme.typography.displaySmall.copy(fontWeight = FontWeight.Bold),
             color = colorResource(id = R.color.display_small)
         )
         Text(
+            modifier = Modifier.padding(horizontal = MediumPadding2),
             text = page.description,
-            modifier = Modifier
-                .padding(horizontal = MediumPadding2),
             style = MaterialTheme.typography.bodyMedium,
             color = colorResource(id = R.color.text_medium)
         )
     }
 }
 
-@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES, showBackground = true)
 @Preview(showBackground = true)
+@Preview(uiMode = UI_MODE_NIGHT_YES)
 @Composable
 fun OnBoardingPagePreview() {
-    NewsKattaTheme {
-        OnBoardingPage(page = pages[0])
+    NewsKattaTheme{
+        OnBoardingPage(
+            page = Page(
+                title = "Lorem Ipsum is simply dummy",
+                description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+                image = R.drawable.onboarding1
+            )
+        )
     }
 }

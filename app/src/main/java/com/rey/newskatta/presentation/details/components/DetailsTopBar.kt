@@ -25,47 +25,49 @@ import com.rey.newskatta.ui.theme.NewsKattaTheme
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DetailsTopBar(
-    onBrowsingClick:() -> Unit,
-    onShareClick:() -> Unit,
-    onBookMarkClick:() -> Unit,
-    onBackClick:() -> Unit
-){
+    onBrowsingClick: () -> Unit,
+    onShareClick: () -> Unit,
+    onBookMarkClick: () -> Unit,
+    onBackClick: () -> Unit,
+) {
+
     TopAppBar(
-        title = { },
         modifier = Modifier.fillMaxWidth(),
         colors = TopAppBarDefaults.mediumTopAppBarColors(
             containerColor = Color.Transparent,
             actionIconContentColor = colorResource(id = R.color.body),
-            navigationIconContentColor = colorResource(id = R.color.body)
+            navigationIconContentColor = colorResource(id = R.color.body),
         ),
+        title = {},
         navigationIcon = {
-            IconButton(onClick = { onBackClick }) {
+            IconButton(onClick = onBackClick) {
                 Icon(
                     painter = painterResource(id = R.drawable.ic_back_arrow),
-                    contentDescription = null
+                    contentDescription = null,
                 )
             }
         },
         actions = {
-            IconButton(onClick = { onBookMarkClick }) {
+
+            IconButton(onClick = onBookMarkClick) {
                 Icon(
                     painter = painterResource(id = R.drawable.ic_bookmark),
                     contentDescription = null
                 )
             }
-            IconButton(onClick = { onShareClick }) {
+            IconButton(onClick = onShareClick) {
                 Icon(
                     imageVector = Icons.Default.Share,
                     contentDescription = null
                 )
             }
-            IconButton(onClick = { onBrowsingClick }) {
+            IconButton(onClick = onBrowsingClick) {
                 Icon(
                     painter = painterResource(id = R.drawable.ic_network),
                     contentDescription = null
                 )
             }
-        }
+        },
     )
 }
 

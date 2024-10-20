@@ -10,8 +10,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.Navigator
 import androidx.paging.compose.collectAsLazyPagingItems
+import com.rey.newskatta.domain.model.Article
 import com.rey.newskatta.presentation.Dimens.MediumPadding1
-import com.rey.newskatta.presentation.common.ArticleList
+import com.rey.newskatta.presentation.common.ArticlesList
+
 import com.rey.newskatta.presentation.common.SearchBar
 import com.rey.newskatta.presentation.nvgraph.Route
 
@@ -19,33 +21,30 @@ import com.rey.newskatta.presentation.nvgraph.Route
 fun SearchScreen(
     state: SearchState,
     event:(SearchEvent) -> Unit,
-    navigate:(String) -> Unit
-){
+    navigateToDetails:(Article) -> Unit
+) {
 
-    Column(modifier = Modifier
-        .padding(
-            top = MediumPadding1,
-            end = MediumPadding1,
-            start = MediumPadding1
-        )
-        .statusBarsPadding()
-        .fillMaxSize()
+    Column(
+        modifier = Modifier
+            .padding(top = MediumPadding1, start = MediumPadding1, end = MediumPadding1)
+            .statusBarsPadding()
     ) {
         SearchBar(
             text = state.searchQuery,
             readOnly = false,
-            onClick = { /*TODO*/ },
             onValueChange = { event(SearchEvent.UpdateSearchQuery(it)) },
-            onSearch = { event(SearchEvent.SearchNews)}
+            onSearch = {
+                event(SearchEvent.SearchNews)
+            },
+            onClick = { /* Handle click event */ }
         )
-        
         Spacer(modifier = Modifier.height(MediumPadding1))
-
         state.articles?.let {
             val articles = it.collectAsLazyPagingItems()
-            
-            ArticleList(articles = articles, onClick = {navigate(Route.DetailsScreen.route)})
+            ArticlesList(
+                articles = articles,
+                onClick = navigateToDetails
+            )
         }
     }
-
 }
