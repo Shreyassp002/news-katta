@@ -15,6 +15,7 @@ A News App that delivers customized short news articles tailored to user prefere
 - **Networking**: Retrofit 
 - **JSON Parsing**: Gson
 - **Image Loading**: Coil
+- **Local Database**: Room
 - **Asynchronous Programming**: Kotlin Coroutines
 - **Navigation**: Jetpack Navigation Compose
 - **Dependency Injection**: Dagger Hilt
@@ -44,7 +45,7 @@ A News App that delivers customized short news articles tailored to user prefere
 
 
 3) Wait for Gradle to download dependencies.
-4) Create a Object file into `app/src/main/java/com/rey/newskatta/util/`
+4) Create a Object file named `Constants.kt` into `app/src/main/java/com/rey/newskatta/util/`
 5) Copy this code and paste in Constants.kt
    
  ```bash
@@ -60,4 +61,4 @@ A News App that delivers customized short news articles tailored to user prefere
 ```
 
 6) Get your Api key from [Here](https://newsapi.org/)
-7) Run.
+7) Run :)
