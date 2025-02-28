@@ -3,7 +3,6 @@ package com.rey.newskatta.data.remote
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.rey.newskatta.domain.model.Article
-import retrofit2.http.Query
 
 class SearchNewsPagingSource(
     private val api: NewsApi,
